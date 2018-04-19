@@ -9,6 +9,7 @@ $(function() {
 	}
 
 	function createTweet(input) {
+	    if (!input.length) return ;
 	    var data = input[0];
 	    var quoteText = $(data.content).text().trim();
 	    var quoteAuthor = data.title;
@@ -30,7 +31,7 @@ $(function() {
 
 	$(document).ready(function() {
 	    getQuote();
-	    $('.trigger').click(function() {
+	    $('.trigger').on('click', function() {
 	        getQuote();
 	    });
 	});
